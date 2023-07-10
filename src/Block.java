@@ -1,4 +1,5 @@
 public interface Block {
-     String getColor();
-     String getMaterial();
+    String getColor();
+
+    String getMaterial();
 }

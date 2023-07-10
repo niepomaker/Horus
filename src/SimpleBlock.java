@@ -1,12 +1,12 @@
-public record SimpleBlock(String color, String material) implements Block {
+public record SimpleBlock(Color color, Material material) implements Block {
 
     @Override
     public String getColor() {
-        return color;
+        return color.name();
     }
 
     @Override
     public String getMaterial() {
-        return material;
+        return material.name();
     }
 }

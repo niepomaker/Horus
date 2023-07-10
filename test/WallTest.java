@@ -4,10 +4,10 @@ import org.junit.Test;
 import java.util.List;
 
 public class WallTest {
-    List<Block> blocks = List.of(new SimpleBlock("Red", "Wood"),
-                                 new SimpleBlock("Blue", "Brick"),
-                                 new SimpleBlock("Green", "Wood"),
-                                 new SimpleBlock("Red", "Brick"));
+    List<Block> blocks = List.of(new SimpleBlock(Color.RED, Material.BRICK),
+            new SimpleBlock(Color.BLUE, Material.WOOD),
+            new SimpleBlock(Color.GREEN, Material.WOOD),
+            new SimpleBlock(Color.RED, Material.BRICK));
 
     Wall wall = new Wall.Builder()
             .addBlock(blocks.get(0))
@@ -17,37 +17,37 @@ public class WallTest {
             .build();
 
     @Test
-    public void findBlockByRedColorTest(){
-        Assert.assertEquals(wall.findBlockByColor("Red").get(), blocks.get(0));
+    public void findBlockByRedColorTest() {
+        Assert.assertEquals(wall.findBlockByColor(Color.RED).get(), blocks.get(0));
     }
 
     @Test
-    public void findBlockByBlueColorTest(){
-        Assert.assertEquals(wall.findBlockByColor("Blue").get(), blocks.get(1));
+    public void findBlockByBlueColorTest() {
+        Assert.assertEquals(wall.findBlockByColor(Color.BLUE).get(), blocks.get(1));
     }
 
     @Test
-    public void findBlockByGreenColorTest(){
-        Assert.assertEquals(wall.findBlockByColor("Green").get(), blocks.get(2));
+    public void findBlockByGreenColorTest() {
+        Assert.assertEquals(wall.findBlockByColor(Color.GREEN).get(), blocks.get(2));
     }
 
     @Test
-    public void findBlocksByBrickMaterialTest(){
-        Assert.assertEquals(wall.findBlocksByMaterial("Brick"), List.of(blocks.get(1), blocks.get(3)));
+    public void findBlocksByBrickMaterialTest() {
+        Assert.assertEquals(wall.findBlocksByMaterial(Material.BRICK), List.of(blocks.get(0), blocks.get(3)));
     }
 
     @Test
-    public void findBlocksByWoodMaterialTest(){
-        Assert.assertEquals(wall.findBlocksByMaterial("Wood"), List.of(blocks.get(0), blocks.get(2)));
+    public void findBlocksByWoodMaterialTest() {
+        Assert.assertEquals(wall.findBlocksByMaterial(Material.WOOD), List.of(blocks.get(1), blocks.get(2)));
     }
 
     @Test
-    public void countTest(){
+    public void countTest() {
         Assert.assertEquals(blocks.size(), wall.count());
     }
 
     @Test
-    public void getBlocksTest(){
+    public void getBlocksTest() {
         Assert.assertEquals(blocks, wall.getBlocks());
     }
 
