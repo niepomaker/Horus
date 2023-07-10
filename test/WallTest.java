@@ -1,3 +1,5 @@
+import enums.Color;
+import enums.Material;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,3 +1,5 @@
+package enums;
+
 public enum Color {
     RED("Red"),
     BLUE("Blue"),

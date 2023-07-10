@@ -1,3 +1,6 @@
+import enums.Color;
+import enums.Material;
+
 public record SimpleBlock(Color color, Material material) implements Block {
 
     @Override

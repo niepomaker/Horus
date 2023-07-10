@@ -1,6 +1,8 @@
+package enums;
+
 public enum Material {
-    WOOD("Red"),
-    BRICK("Blue");
+    WOOD("Wood"),
+    BRICK("Brick");
 
     public final String material;
 
